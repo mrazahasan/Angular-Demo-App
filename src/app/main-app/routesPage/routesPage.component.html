@@ -1,0 +1,207 @@
+<div class="container-fluid">
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 pull-right">
+        <div class="input-group">
+            <input type="text" class="form-control" aria-label="...">
+            <div class="input-group-btn">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
+                <ul class="dropdown-menu dropdown-menu-right">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
+            <!-- /btn-group -->
+        </div>
+    </div>
+    <div class="col-lg-8">
+        <h2>Route</h2>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Section Details</h3>
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                        <div class="form-group">
+                            <label for="exampleInputName2" class="col-sm-4 control-label">Section Code:</label>
+                            <div class="col-sm-6">
+                                <input type="number" class="form-control" placeholder="00121">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
+                        <div class="form-group">
+                            <label for="exampleInputName2" class="col-sm-4 control-label">Name:</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" placeholder="Canal Park">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
+                        <div class="form-group">
+                            <label for="exampleInputName2" class="col-sm-4 control-label">Distributor:</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" placeholder="New Prime Marketing">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
+                        <div class="form-group">
+                            <label for="exampleInputName2" class="col-sm-4 control-label">Droppage:</label>
+                            <div class="col-sm-6">
+                                <select class="form-control">
+                                <option>Yes</option>
+                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
+                        <div class="form-group">
+                            <label for="exampleInputName2" class="col-sm-4 control-label">Status:</label>
+                            <div class="col-sm-6">
+                                <select class="form-control">
+                                <option>Active</option>
+                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
+                        <div class="form-group">
+                            <label for="exampleInputName2" class="col-sm-4 control-label">Legacy Code:</label>
+                            <div class="col-sm-6">
+                                <input type="number" class="form-control" placeholder="00120">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-right">
+                        <div class="form-group">
+                            <div class="col-sm-6 col-xs-6">
+                                <button type="button" class="btn btn-default form-control">
+                                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</button>
+                            </div>
+                            <div class="col-sm-6  col-xs-6">
+                                <button type="button" class="btn btn-default form-control">
+                                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Route List</h3>
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <tr>
+                        <th>Code</th>
+                        <th>Description</th>
+                        <th>Route Inventory</th>
+                        <th>Journey Plan</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr *ngFor="let singleRoute of routeList">
+                        <td>{{ singleRoute.Code }}</td>
+                        <td>{{ singleRoute.Description }}</td>
+                        <td>{{ singleRoute.RouteInventory }}</td>
+                        <td>{{ singleRoute.JourneyPlan }}</td>
+                        <td>{{ singleRoute.Status }}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12 pull-right">
+                    <button (click)="showChildModal(); formModal.reset()" type="button" class="btn btn-default form-control">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new Route
+                    </button>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div bsModal #lgModal="bs-modal" class="modal fade bs-example-modal-lg" id="addNewRouteModel" tabindex="-1" role="dialog"
+                aria-labelledby="addNewRouteModelLabel">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">New Route</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal" [formGroup]="formModal">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                        <div class="form-group" [ngClass]="{'has-error':!formModal.controls['Code'].valid && formModal.controls['Code'].touched}">
+                                            <label for="exampleInputName2" class="col-sm-4 control-label">Code:</label>
+                                            <div class="col-sm-6">
+                                                <input [formControl]="formModal.controls['Code']" type="number" class="form-control" placeholder="00121">
+                                                <div *ngIf="formModal.controls['Code'].hasError('required') && formModal.controls['Code'].touched" class="alert alert-danger">You must include a Code.</div>
+                                                <div *ngIf="formModal.controls['Code'].hasError('minLength') && formModal.controls['Code'].touched" class="alert alert-danger">Your Code cannot exceed 5 characters.</div>
+                                                <div *ngIf="formModal.controls['Code'].hasError('maxValue') && formModal.controls['Code'].touched" class="alert alert-danger">Your Code cannot exceed 5 characters.</div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
+                                        <div class="form-group" [ngClass]="{'has-error':!formModal.controls['Description'].valid && formModal.controls['Description'].touched}">
+                                            <label for="exampleInputName2" class="col-sm-4 control-label">Description:</label>
+                                            <div class="col-sm-6">
+                                                <input formControlName="Description" type="text" class="form-control" placeholder="Canal Park">                                                    
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
+                                        <div class="form-group" [ngClass]="{'has-error':!formModal.controls['RouteInventory'].valid && formModal.controls['RouteInventory'].touched}">
+                                            <label for="exampleInputName2" class="col-sm-4 control-label">Route Inventory:</label>
+                                            <div class="col-sm-6">
+                                                <select formControlName="RouteInventory" class="form-control">
+                                                    <option>Yes</option>
+                                                    <option>No</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
+                                        <div class="form-group" [ngClass]="{'has-error':!formModal.controls['JourneyPlan'].valid && formModal.controls['JourneyPlan'].touched}">
+                                            <label for="exampleInputName2" class="col-sm-4 control-label">Journey Plan:</label>
+                                            <div class="col-sm-6">
+                                                <input formControlName="JourneyPlan" type="text" class="form-control" placeholder="Monday - Tuesday">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
+                                        <div class="form-group" [ngClass]="{'has-error':!formModal.controls['Status'].valid && formModal.controls['Status'].touched}">
+                                            <label for="exampleInputName2" class="col-sm-4 control-label">Status:</label>
+                                            <div class="col-sm-6">
+                                                <select formControlName="Status" class="form-control">
+                                                    <option>Active</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal" (click)="hideModal()">Close</button>
+                                    <button type="submit" class="btn btn-primary" data-dismiss="modal" (click)="saveDataHide()" [disabled]="!formModal.valid">Add</button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

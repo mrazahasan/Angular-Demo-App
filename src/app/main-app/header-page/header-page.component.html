@@ -1,0 +1,47 @@
+<!-- core/navbar.component.html -->
+
+
+<nav class="navbar navbar-default" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" >TallySIS</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav navbar-left">
+            <li class="dropdown" dropdown>
+                <a class="dropdown-toggle" data-toggle="dropdown" dropdownToggle>Admin <span class="caret"></span>
+                </a>
+                <ul dropdownMenu role="menu" aria-labelledby="single-button">
+                    <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
+                    <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
+                    <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
+                    <li class="divider dropdown-divider"></li>
+                    <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav">
+            <li><a [routerLink]="['/app/routes']">Dashboard</a></li>
+            <li><a [routerLink]="['/app/users']">User</a></li>
+            <li><a href="#">Tasks</a></li>
+            <li><a href="#">Integration</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li ><a href="#"><span class="glyphicon glyphicon-bell"></span></a></li>
+            <li ><a href="#"><span class="glyphicon glyphicon-list"></span></a></li>
+            <li ><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+            <li><a style="padding: 5%;" class="medium-heading"><div>Manufecturer</div><div>1123</div></a></li>
+        </ul>
+    </div>
+
+    <!-- /.navbar-collapse -->
+</nav>
