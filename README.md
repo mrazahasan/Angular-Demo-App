@@ -2,10 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.2.
 
-##Change pages
-###login
+## Change pages
+### login
 for login page type "/login" in URL
-###app
+### app
 for app pages type "/app" in URL
 ## Development server
 
