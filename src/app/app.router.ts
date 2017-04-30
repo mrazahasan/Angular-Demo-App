@@ -1,3 +1,4 @@
+import { SignUpComponent } from './sign-up/sign-up.component';
 import { RoutesPageComponent } from './main-app/routesPage/routesPage.component';
 import { UsersComponent } from './main-app/users/users.component';
 import { MainAppComponent } from './main-app/main-app.component';
@@ -12,13 +13,13 @@ import { AppComponent } from './app.component';
 export const router: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
     { path: 'login', component: LoginPageComponent },
+    { path: 'signup', component: SignUpComponent },
     {
         path: 'app', component: MainAppComponent,
         	  children: [
         		  { path: '', redirectTo: 'routes', pathMatch: 'full'},
         		  { path: 'users', component: UsersComponent},
         		  { path: 'routes', component: RoutesPageComponent}
-        // 		  { path: 'calendar', component: TaskCalendarComponent}
         	  ]
     },
     //  { path: 'blank', component: BlankComponent },

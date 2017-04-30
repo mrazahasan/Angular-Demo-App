@@ -11,7 +11,7 @@ export function maxValue(max: Number): ValidatorFn {
 	return (control: AbstractControl): { [key: string]: any } => {
 		var isValid:any;
 		const input = control.value;
-		//debugger;
+		
 		if(input != null)
 			isValid = input.toString().length > max;
 		else

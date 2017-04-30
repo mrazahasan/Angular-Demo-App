@@ -1,3 +1,5 @@
+import { LoginService } from './service/login.service';
+import { SignupService } from './service/signup.service';
 import { RoutesPageComponent } from './main-app/routesPage/routesPage.component';
 import { HeaderPageComponent } from './main-app/header-page/header-page.component';
 import { FooterPageComponent } from './main-app/footer-page/footer-page.component';
@@ -14,6 +16,8 @@ import { AppComponent } from './app.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { MainAppComponent } from './main-app/main-app.component';
 
+import { SignUpComponent } from './sign-up/sign-up.component';
+
 @NgModule({
   declarations: [
     RoutesPageComponent,
@@ -23,6 +27,7 @@ import { MainAppComponent } from './main-app/main-app.component';
     AppComponent,
     LoginPageComponent,
     MainAppComponent,
+    SignUpComponent,
   ],
   imports: [
     
@@ -36,7 +41,10 @@ import { MainAppComponent } from './main-app/main-app.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    SignupService,
+    LoginService
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
